@@ -152,3 +152,18 @@ footer {
   margin-top: 40px;
 }
 
+/* ANIMAÇÃO AO ABRIR PÁGINA */
+
+body {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: aparecer 0.8s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -21,7 +21,7 @@
   <a href="futuras.html">Próximas Viagens</a>
 </nav>
 
-  <button class="dark-btn" onclick="modoEscuro()">🌙 Modo Escuro</button>
+  <button class="dark-btn" onclick="modoEscuro()" id="temaBtn">🌙 Modo Escuro</button>
 </header>
 
 <main>
@@ -198,10 +198,44 @@ function curtir(el) {
   el.classList.add("ativo");
 }
 
-function modoEscuro() {
-  document.body.classList.toggle("dark");
-}
 
+
+  const body = document.body;
+  const botao = document.getElementById("temaBtn");
+
+ body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    botao.innerHTML = "☀️ Modo Claro";
+  } else {
+    botao.innerHTML = "🌙 Modo Escuro";
+  }
+
+
+function modoEscuro() {
+  const body = document.body;
+  const botao = document.getElementById("temaBtn");
+
+  body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    botao.innerHTML = "☀️ Modo Claro";
+    localStorage.setItem("tema", "dark");
+  } else {
+    botao.innerHTML = "🌙 Modo Escuro";
+    localStorage.setItem("tema", "light");
+  }
+}
+// Verifica tema salvo ao carregar página
+window.onload = function() {
+  const temaSalvo = localStorage.getItem("tema");
+  const botao = document.getElementById("temaBtn");
+
+  if (temaSalvo === "dark") {
+    document.body.classList.add("dark");
+    botao.innerHTML = "☀️ Modo Claro";
+  }
+}
 </script>
 
 </body>
