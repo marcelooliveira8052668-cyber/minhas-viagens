@@ -18,11 +18,25 @@ header {
 }
 
 button.dark-btn {
-  margin-top: 10px;
-  padding: 8px 15px;
+  margin-top: 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
+  background: white;
+  color:#2c3e50;
+  font-weight: bold;
+  transition: 0.35;
+}
+
+button.dark-btn:hover {
+  transform: scale(1.05);
+  background: #f1f1f1;
+}
+
+body.dark button.dark-btn {
+  background: #333;
+  color: white;
 }
 
 nav {
