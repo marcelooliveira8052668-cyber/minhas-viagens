@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -343,3 +344,334 @@ function modoEscuro() {
 
 </body>
 </html>
+=======
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Minhas Viagens</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #f0f2f5);
+  transition: 0.4s;
+}
+
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+button.dark-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+  transition: 0.4s;
+  animation: fadeIn 1s ease;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* GALERIA */
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.foto {
+  position: relative;
+}
+
+.foto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.foto img:hover {
+  transform: scale(1.05);
+}
+
+.like {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.like.ativo {
+  color: red;
+  transform: scale(1.3);
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌍 Minhas Viagens</h1>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Viagens</a>
+    <a href="https://wa.me/5511942038103" target="_blank">Contato</a>
+  </nav>
+  <button class="dark-btn" onclick="modoEscuro()">🌙 Modo Escuro</button>
+</header>
+
+<main>
+<div class="container">
+
+<div class="card">
+<h2>🌿 Carnaval entre amigos Ibiúna - SP</h2>
+
+<p>
+Final de semana incrível na chácara com amigos e minha esposa.
+Piscina, churrasco, karaoke e natureza, risadas e momentos inesquecíveis.
+</p>
+
+<h3>📸 Momentos do Carnaval</h3>
+
+<div class="galeria">
+
+    <div class="galeria">
+      
+      <div class="foto">
+  <img src="IMG8008.jpeg" onclick="abrirModal(this)">
+  <div class="like" onclick="curtir(this)" data-id="20">
+    ❤️ <span>0</span>
+  </div>
+</div>
+
+  <div class="foto">
+    <img src="chacara 1.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="1">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara7.jpeg" onclick="abrirModal(this)"
+   <div class="like" onclick="curtir(this)" data-id="2">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara22.jpeg" onclick="abrirModal(this)">
+   <div class="like" onclick="curtir(this)" data-id="3">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara8.jpeg" onclick="abrirModal(this)">
+   <div class="like" onclick="curtir(this)" data-id="4">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara4.jpeg" onclick="abrirModal(this)" data-id="5">
+    <div class="like" onclick="curtir(this)">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara19.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="6">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara2.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="7">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara13.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="8">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara12.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="9">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara15.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="10">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara5.jpeg" onclick="abrirModal(this)">
+   <div class="like" onclick="curtir(this)" data-id="11"
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara11.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="12">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara16.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="13">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara10.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="14">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara14.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="15">
+  ❤️ <span>0</span>
+</div>
+
+  <div class="foto">
+    <img src="chacara21.jpeg" onclick="abrirModal(this)">
+    <div class="like" onclick="curtir(this)" data-id="16">
+  ❤️ <span>0</span>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>🏖 Praia em Breve!!!</h2>
+<img src="Praia.jpg" style="width:100%; border-radius:15px;">
+<p>Em breve mais uma aventura registrada aqui no site.</p>
+</div>
+
+</div>
+</main>
+
+<footer>
+<p>© 2026 - Marcelo Oliveira</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="fecharModal()">
+<img id="imgModal">
+</div>
+
+<script>
+
+function abrirModal(img) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("imgModal").src = img.src;
+}
+
+function fecharModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function curtir(el) {
+  el.classList.toggle("ativo");
+}
+
+function modoEscuro() {
+  document.body.classList.toggle("dark");
+}
+
+</script>
+
+</body>
+</html>
+
+
+>>>>>>> 5a8398e4d6a6945902525d70f8dca815d7edb8ef
