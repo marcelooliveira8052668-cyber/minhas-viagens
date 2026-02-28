@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Viagens Realizadas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🌍 Viagens Realizadas</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="realizadas.html">Viagens Realizadas</a>
+    <a href="futuras.html">Próximas Viagens</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <div class="card">
+      <h2>🌿 Carnaval em Ibiúna</h2>
+      <p>Final de semana incrível na chácara...</p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

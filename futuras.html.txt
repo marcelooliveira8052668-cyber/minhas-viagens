@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Próximas Viagens</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>✈️ Próximas Viagens</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="realizadas.html">Viagens Realizadas</a>
+    <a href="futuras.html">Próximas Viagens</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <div class="card">
+      <h2>🏖 Praia 2026</h2>
+      <p>Destino ainda surpresa...</p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
