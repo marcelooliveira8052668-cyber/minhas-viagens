@@ -344,7 +344,7 @@ function modoEscuro() {
 
 </body>
 </html>
-=======
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -649,27 +649,54 @@ Piscina, churrasco, karaoke e natureza, risadas e momentos inesquecíveis.
 <img id="imgModal">
 </div>
 
-<p id="likes">0</p>
-<button onclick="curtir()">❤️ Curtir</button>
+
 
 <script>
-let contador = localStorage.getItem("likes");
 
-if (contador === null) {
-  contador = 0;
-} else {
-  contador = parseInt(contador);
+function abrirModal(img) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("imgModal").src = img.src;
 }
 
-document.getElementById("likes").innerText = contador;
+function fecharModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
-function curtir() {
+function curtir(el) {
+  let id = Array.from(document.querySelectorAll(".like")).indexOf(el);
+  let span = el.querySelector("span");
+
+  let contador = localStorage.getItem("like_" + id);
+
+  if (contador === null) {
+    contador = 0;
+  } else {
+    contador = parseInt(contador);
+  }
+
   contador++;
-  document.getElementById("likes").innerText = contador;
-  localStorage.setItem("likes", contador);
-}
-</script>
+  span.innerText = contador;
 
+  localStorage.setItem("like_" + id, contador);
+
+  el.classList.add("ativo");
+}
+
+// carregar likes salvos ao abrir a página
+window.onload = function() {
+  document.querySelectorAll(".like").forEach((el, index) => {
+    let salvo = localStorage.getItem("like_" + index);
+    if (salvo !== null) {
+      el.querySelector("span").innerText = salvo;
+    }
+  });
+}
+
+function modoEscuro() {
+  document.body.classList.toggle("dark");
+}
+
+</script>
 
 </body>
 </html>
